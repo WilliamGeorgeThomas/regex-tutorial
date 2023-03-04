@@ -1,10 +1,12 @@
-# Title (replace with your title)
+# WGT Regex Tutorial
 
 Introductory paragraph (replace this with your text)
+As a new web developer I am always interested in learning new tools that can assist in the coding process.  Regular Expressions, or regex, are one such tool.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+In this tutorial I will be explaining the following regex which matches an email address.  This is very useful for validating that a user has entered a valid email address while using your application.  
+`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
 
 ## Table of Contents
 
@@ -37,4 +39,5 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+This gist was created by Will Thomas.  Visit my [GitHub profile](https://github.com/WilliamGeorgeThomas) for more information about me.
+    
