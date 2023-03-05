@@ -4,8 +4,9 @@ As a new web developer I am always interested in learning new tools that can ass
 
 ## Summary
 
-In this tutorial I will be explaining components of a regex and where they are found in the following regex which matches an email address.  This is very useful for validating that a user has entered a valid email address while using your application.  
 `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
+
+In this tutorial I will be explaining components of a regex and where they are found in the regex above which matches an email address.  This is very useful for validating that a user has entered a valid email address while using your application.  In our example, all aspects of an email address are checked such as presence of alphanumeric characters in the address, the `@` symbol, a valid url, followed by a `.` and domain extension.
 
 ## Table of Contents
 
