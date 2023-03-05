@@ -1,6 +1,5 @@
 # WGT Regex Tutorial
 
-Introductory paragraph (replace this with your text)
 As a new web developer I am always interested in learning new tools that can assist in the coding process.  Regular Expressions, or regex, are one such tool.
 
 ## Summary
@@ -27,14 +26,13 @@ A regex begins and ends with a `/` character.  These slashes denote the code as 
 
 The first component of a regex is an anchor.  These are used for matching strings, either exactly or from a range.  We use the `^` and `$` characters as anchors.  The difference between the two characters is the order of the character and string.  The `^` is used for strings that ***follow*** the character while the `$` is used for strings that ***precede*** it.
 
-In the email address example 
-`^([a-z0-9_\.-]+)`
-
 ### Quantifiers
 
 Unsurprisingly, quantifiers deal with the quantity of characters in a regex.  When contained in `{}` they signal either the exact number of characters needed, or a minimum and maximum number.    
 
 In our email example we see `{2,6}` after the `.` character.  This is for the domain extension of an email address such as .com, .org, or .gov.  The minimum lenght for these extensions is 2 characters and the maximum is 6.    
+
+We also find the example of `+` which checks for the pattern more than once.  We find this in our example 2 times.
 
 ### Grouping Constructs
 
@@ -42,25 +40,18 @@ Grouping constructs allow a long and complex regex to be broken up into smaller 
 
 In the email regex, there are 3 subexpressions:    
 
-`([a-z0-9_\.-]+)`    
-`([\da-z\.-]+)`    
-`([a-z\.]{2,6})`    
-
-
-`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
-
-
+`([a-z0-9_\.-]+)` : checks against contained bracket expression which will be explained in the next section and does so multiple times as indicated by the `+`    
+`([\da-z\.-]+)` : same as above but with different bracket expression    
+`([a-z\.]{2,6})` : checks against a different bracket expression while also containing a quantifier of between 2 and 6 characters    
 
 ### Bracket Expressions
 
 The `[]` characters are used to contain bracket expressions.  These denote a ***range*** of characters rather than a ***specific*** character.
 
 There are 3 bracket expressions in our email address regex:   
-`[a-z0-9_\.-]`   
-Denotes any letter from a-z, any digit from 0-9, and the special characters  `_` `\` `.` `-` which are also valid to use in email addresses.   
-`[\da-z\.-]`   
-
-`[a-z\.]`   
+`[a-z0-9_\.-]` : denotes any letter from a-z, any digit from 0-9, and the special characters  `_` `\` `.` `-` which are also valid to use in email addresses    
+`[\da-z\.-]` : also checks for numerical digits (explained in next section), letters, and those special characters in the email domain    
+`[a-z\.]` : checks for letters a-z as well as only the `\` and `.` special characters    
 
 ### Character Classes
 
@@ -76,13 +67,14 @@ The character `|` is used to signify "or" in a regex just like it is used in Jav
 
 ### Flags
 
+Flags are characters that can be placed at the end of a regex after the final `/` character.  While there are none in our email example, the 3 most common are:    
+`g` : tests regex against all posibilities in a string    
+`i` : ignores case when matching    
+`m` : treats multiple line strings as multiple lines    
+
 ### Character Escapes
 
-The character `\` is used a an escape.  When using it before another character it stops it from being read literally.  In our example it stops 
-`[\da-z\.-]+)\.([a-z\.]{2,6})$/`
-
-
-
+The character `\` is used a an escape.  When using it before another character it stops it from being read literally.  There are no examples of this in the email regex. 
 
 ## Author
 
